@@ -279,4 +279,5 @@ select:focus {
 .toggle-mode img {
     width: 20px;
     height: 20px;
+    transition: opacity 0.3s;
 }

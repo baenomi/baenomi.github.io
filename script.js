@@ -303,31 +303,39 @@ document.addEventListener("DOMContentLoaded", function() {
     
     });
     
-    // Light/dark mode logic
+    // Select the toggle button and icon
     const toggleButton = document.getElementById('toggle-button');
     const toggleIcon = document.getElementById('toggle-icon');
 
     if (localStorage.getItem('dark-mode') === 'enabled') {
         document.body.classList.add('dark-mode');
-        toggleIcon.src = 'images/moon.png';
+        toggleIcon.src = 'images/sun.png';
     }
 
-    toggleButton?.addEventListener('click', () => {
+    toggleButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         
-        if (document.body.classList.contains('dark-mode')) {
-            toggleIcon.src = 'images/moon.png';
-            localStorage.setItem('dark-mode', 'enabled');
-        } else {
-            toggleIcon.src = 'images/sun.png';
-            localStorage.setItem('dark-mode', 'disabled');
-        }
+        toggleIcon.style.opacity = 0;
+        setTimeout(() => {
+            if (document.body.classList.contains('dark-mode')) {
+                toggleIcon.src = 'images/sun.png';
+                localStorage.setItem('dark-mode', 'enabled');
+            } else {
+                toggleIcon.src = 'images/moon.png';
+                localStorage.setItem('dark-mode', 'disabled');
+            }
+            toggleIcon.style.opacity = 1;
+        }, 170);
     });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
         if (localStorage.getItem('dark-mode') !== 'enabled') {
             document.body.classList.toggle('dark-mode', event.matches);
-            toggleIcon.src = event.matches ? 'images/moon.png' : 'images/sun.png';
+            toggleIcon.style.opacity = 0;
+            setTimeout(() => {
+                toggleIcon.src = event.matches ? 'images/sun.png' : 'images/moon.png';
+                toggleIcon.style.opacity = 1;
+            }, 170);
         }
     });
 
