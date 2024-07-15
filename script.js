@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (localStorage.getItem('dark-mode') === 'enabled') {
         document.body.classList.add('dark-mode');
-        toggleIcon.src = 'images/sun.png';
+        toggleIcon.src = 'images/moon.png';
     }
 
     toggleButton.addEventListener('click', () => {
@@ -318,10 +318,10 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleIcon.style.opacity = 0;
         setTimeout(() => {
             if (document.body.classList.contains('dark-mode')) {
-                toggleIcon.src = 'images/sun.png';
+                toggleIcon.src = 'images/moon.png';
                 localStorage.setItem('dark-mode', 'enabled');
             } else {
-                toggleIcon.src = 'images/moon.png';
+                toggleIcon.src = 'images/sun.png';
                 localStorage.setItem('dark-mode', 'disabled');
             }
             toggleIcon.style.opacity = 1;
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.toggle('dark-mode', event.matches);
             toggleIcon.style.opacity = 0;
             setTimeout(() => {
-                toggleIcon.src = event.matches ? 'images/sun.png' : 'images/moon.png';
+                toggleIcon.src = event.matches ? 'images/moon.png' : 'images/sun.png';
                 toggleIcon.style.opacity = 1;
             }, 170);
         }
