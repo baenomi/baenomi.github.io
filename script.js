@@ -263,8 +263,72 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Load passwords when the page is loaded
-    loadPasswords();
+    document.addEventListener("DOMContentLoaded", function() {
+        loadUsernames();
     
+        function loadUsernames() {
+            const userList = document.getElementById("userList");
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+    
+            if (users.length === 0) {
+                userList.innerHTML = "<li>No users found.</li>";
+                return;
+            }
+    
+            users.forEach(user => {
+                const listItem = document.createElement("li");
+                listItem.textContent = user.username;
+                
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "❌";
+                deleteButton.classList.add("delete-button");
+                deleteButton.addEventListener("click", function() {
+                    if (confirm(`Are you sure you want to delete the account: ${user.username}?`)) {
+                        deleteUser(user.username);
+                    }
+                });
+    
+                listItem.appendChild(deleteButton);
+                userList.appendChild(listItem);
+            });
+        }
+    
+        function deleteUser(username) {
+            let user_records = JSON.parse(localStorage.getItem("users")) || [];
+            user_records = user_records.filter(user => user.username !== username);
+            localStorage.setItem("users", JSON.stringify(user_records));
+            alert(`Account ${username} has been deleted.`);
+            loadUsernames();
+        }
+    
+    });
+    
+    // Light/dark mode logic
+    const toggleButton = document.getElementById('toggle-button');
+    const toggleIcon = document.getElementById('toggle-icon');
+
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        toggleIcon.src = 'images/moon.png';
+    }
+
+    toggleButton?.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            toggleIcon.src = 'images/moon.png';
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            toggleIcon.src = 'images/sun.png';
+            localStorage.setItem('dark-mode', 'disabled');
+        }
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (localStorage.getItem('dark-mode') !== 'enabled') {
+            document.body.classList.toggle('dark-mode', event.matches);
+            toggleIcon.src = event.matches ? 'images/moon.png' : 'images/sun.png';
+        }
+    });
 
 });
