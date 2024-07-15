@@ -10,6 +10,7 @@ Functions:
 4. Section with checking saved passwords for each site;
 5. Logout option;
 6. Changing password in logged Password Manager app account;
+7. Light/dark mode;
 
 Future features:
 
