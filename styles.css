@@ -282,7 +282,7 @@ select:focus {
     transition: opacity 0.3s;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 300px) {
     .container {
         width: 100vw;
         height: 100vh;
