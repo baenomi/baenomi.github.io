@@ -29,7 +29,7 @@ body.dark-mode {
 
     body.dark-mode {
         font-family: 'Arial', sans-serif;
-        background-color: rgb(255, 250, 228);
+        background-color: rgb(172, 172, 172);
         margin: 0;
         padding: 0;
         display: flex;
@@ -280,4 +280,24 @@ select:focus {
     width: 20px;
     height: 20px;
     transition: opacity 0.3s;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: rgb(45, 45, 45);
+        border-radius: 0px;
+    }
+
+    .container.dark-mode {
+        background-color: rgb(172, 172, 172);
+        color: black; /* Kolor tekstu w trybie jasnym */
+    }
+
 }

@@ -306,34 +306,35 @@ document.addEventListener("DOMContentLoaded", function() {
     // Select the toggle button and icon
     const toggleButton = document.getElementById('toggle-button');
     const toggleIcon = document.getElementById('toggle-icon');
+    const container = document.querySelector('.container');
 
     if (localStorage.getItem('dark-mode') === 'enabled') {
         document.body.classList.add('dark-mode');
+        container.classList.add('dark-mode');
         toggleIcon.src = 'images/moon.png';
     }
 
     toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
+        const isDarkMode = document.body.classList.toggle('dark-mode');
+        container.classList.toggle('dark-mode', isDarkMode);
         toggleIcon.style.opacity = 0;
+
         setTimeout(() => {
-            if (document.body.classList.contains('dark-mode')) {
-                toggleIcon.src = 'images/moon.png';
-                localStorage.setItem('dark-mode', 'enabled');
-            } else {
-                toggleIcon.src = 'images/sun.png';
-                localStorage.setItem('dark-mode', 'disabled');
-            }
+            toggleIcon.src = isDarkMode ? 'images/moon.png' : 'images/sun.png';
             toggleIcon.style.opacity = 1;
+            localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
         }, 170);
     });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
         if (localStorage.getItem('dark-mode') !== 'enabled') {
-            document.body.classList.toggle('dark-mode', event.matches);
+            const isDarkMode = event.matches;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            container.classList.toggle('dark-mode', isDarkMode);
             toggleIcon.style.opacity = 0;
+
             setTimeout(() => {
-                toggleIcon.src = event.matches ? 'images/moon.png' : 'images/sun.png';
+                toggleIcon.src = isDarkMode ? 'images/moon.png' : 'images/sun.png';
                 toggleIcon.style.opacity = 1;
             }, 170);
         }
