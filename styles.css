@@ -275,7 +275,7 @@ select:focus {
     
     .container {
         width: 88vw;
-        height: 60vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
