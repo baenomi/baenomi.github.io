@@ -340,4 +340,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Logo animation logic
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.querySelector('.container');
+        setTimeout(() => {
+            container.classList.add('container-loaded');
+        }, 100);
+    
+        const logoContainer = document.querySelector('.logo-container');
+        const logoText = document.querySelector('.logo-text');
+    
+        logoContainer.addEventListener('mouseenter', () => {
+            logoText.style.opacity = 1;
+            logoText.style.transform = 'translateX(0)';
+        });
+    
+        logoContainer.addEventListener('mouseleave', () => {
+            logoText.style.opacity = 0;
+            logoText.style.transform = 'translateX(-10px)';
+        });
+    });
 });
