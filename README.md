@@ -11,6 +11,7 @@ Functions:
 5. Logout option;
 6. Changing password in logged Password Manager app account;
 7. Light/dark mode;
+8. "PASSWORD MANAGER" logo animation, when you hover your cursor over it;
 
 Future features:
 
