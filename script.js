@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
     generateButton?.addEventListener("click", function() {
         const length = parseInt(document.getElementById("passwordLength").value);
         const siteName = siteNameInput.value;
+        const generatedPasswordInput = document.getElementById("generatedPassword");
 
         if (length >= 6 && length <= 24) {
             const password = generateStrongPassword(length);
@@ -120,6 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (confirmSave) {
                         saveGeneratedPassword(currentUser, siteName, password);
                         alert(`Password for ${siteName} updated successfully!`);
+                    } else {
+                        generatedPasswordInput.value = "Overwriting password cancelled";
                     }
                 } else {
                     // Save without confirmation if there was no existing password
