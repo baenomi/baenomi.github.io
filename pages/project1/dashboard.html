@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <span class="logo-text">PASSWORD MANAGER</span>
+        </div>
+        <div id="toggle-button" class="toggle-mode">
+            <img id="toggle-icon" src="images/sun.png" alt="Toggle Mode">
+        </div>
+        <h1 class="main-heading">Dashboard menu</h1>
+        <nav class="menu">
+            <ul>
+                <li><button id="generatePassword" class="nav-button">Generate strong password</button></li>
+                <li><button id="checkPasswords" class="nav-button">Check saved passwords</button></li>
+                <li><button id="manageLogin" class="nav-button">Manage your account</button></li>
+                <li><button id="logout" class="out-button">Log out</button></li>
+            </ul>
+        </nav>
+    </div>
+    <footer class="footer">
+        <a href="/index.html" class="home-link">
+            <span>Back to</span>
+            <ion-icon name="home"></ion-icon>
+            <span>portfolio</span>
+        </a>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
