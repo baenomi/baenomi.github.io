@@ -11,14 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="styles.css">
     <title>Portfolio</title>
 </head>
 <body>
     <nav class="top">
-        <div class="name"></div>
-        
         <ul class="menu">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -26,32 +25,11 @@
         </ul>
 
         <div id="toggle-button" class="toggle-mode">
-            <img id="toggle-icon" src="images/sun.png" alt="Toggle Mode">
+            <img id="toggle-icon" src="images/sun-dark.png" alt="Toggle Mode">
         </div>
 
         <div id="menu-toggle" class="menu-toggle">
-            <img src="images/menu-icon.png" alt="Menu Toggle">
-        </div>
-    </nav>
-    <nav class="sidebar">
-        <div class="wrapper-side">
-            <div class="button-side">
-                <div class="icon-side">
-                    <a href="#footer"><img src="images/mail_dark.png" alt="Hire me!" /></a>
-                </div>
-                <form id="contactForm" action="send_email.php" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name">
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required autocomplete="email">
-                    
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
-                    
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+            <img src="images/menu-icon-dark.png" alt="Menu Toggle">
         </div>
     </nav>
     <section id="about" class="hidden">
@@ -67,7 +45,9 @@
                             I approach each project with determination and never give up. I believe the key to success is daily growth and happines.
                         </p>
                     </div>
-                    <img class="me" src="images/profileImg.png" />
+                    <div class="wrapper">
+                        <div class="image"></div>
+                    </div>
                 </div>
                 <div class="additional-info">
                     <div class="education">
@@ -97,87 +77,46 @@
     </section>
     <section id="projects" class="hidden">
         <div class="intro2">
-            <h1>PROJECTS</h1>
-            <p>
-                Discover my projects! I've prepared a variety of works that showcase my skills and passion.
-                Each project is the result of hard work and dedication. Dive into the world of creativity and
-                innovation, <b>press the project you like for more information!</b>
-            </p>
-            <div class="scroll-indicator">
-                <button class="back" aria-label="Previous Project">
-                    <img src="images/back.png" alt="back">
-                </button>
-                <p>Scroll left or right</p>
-                <button class="next" aria-label="Next Project">
-                    <img src="images/next.png" alt="next">
-                </button>
-            <div class="scroll-indicator-mobile">
-                <button class="back" aria-label="Previous Project">
-                    <img src="images/back.png" alt="back">
-                </button>
-                <p>No scroll? No problem</p>
-                <button class="next" aria-label="Next Project">
-                    <img src="images/next.png" alt="next">
-                </button>
-            </div>
-            </div>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="description">
-                            <a href="pages/project1/index.html" class="project-link">
-                                <img src="images/project1.png" alt="Project 1">
-                            </a>
-                            <p>Password manager. Generate strong passwords, store them and check them whenever you need.</p>
-                            <span>
-                                Register and login forms, option with generating strong password to the site from the list with an length argument.
-                                If already password is stored on your logged account for chosen site password manager asks if you want to
-                                overwrite it, otherwise it's saving without asking. Option for checking your stored passwords. Also possible
-                                changing password for Password manager account, only if your logged in and you know current password. Soon I will
-                                try to add option for recovering password with an e-mail and administrator management of registered accounts.
-                            </span>
+            <div class="main-content">
+                <div class="about">
+                    <h1>PROJECTS</h1>
+                    <p>
+                        Discover my projects! I've prepared a variety of works that showcase my skills and passion.
+                        Each project is the result of hard work and dedication. Dive into the world of creativity and
+                        innovation.
+                    </p>
+                </div>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <img src="/src/images/project1.png" alt="Project 1" class="project-image">
+                        <div class="project-info">
+                            <h2>Password manager</h2>
+                            <p>Generate strong passwords, store them and check them whenever you need.</p>
+                            <a href="/src/pages/project1/index.html" class="read-more">Take a look..</a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="description">
-                            <a href="pages/project2/index.html" class="project-link">
-                                <img src="images/project2.png" alt="Project 2">
-                            </a>
-                            <p>Sneakers online shop.</p>
-                            <span>
-                                In progress..
-                            </span>
+                    <div class="project-card">
+                        <img src="/src/images/project2.png" alt="Project 2" class="project-image">
+                        <div class="project-info">
+                            <h2>Sneakers online shop</h2>
+                            <p>Main page for reseller company. Im passionate about sneakers and I had
+                                my own bussiness before.
+                            </p>
+                            <a href="/src/pages/project2/index.html" class="read-more">Take a look..</a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="description">
-                            <a href="project3.html" class="project-link">
-                                <img src="images/test3.jpg" alt="Project 3">
-                            </a>
-                            <p>SOON</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="description">
-                            <a href="project4.html" class="project-link">
-                                <img src="images/test4.jpg" alt="Project 4">
-                            </a>
-                            <p>SOON</p>
+                    <div class="project-card">
+                        <img src="/src/images/project3.webp" alt="Project 3" class="project-image">
+                        <div class="project-info">
+                            <h2>Project 3</h2>
+                            <p>In progress...</p>
+                            <a href="#" class="read-more">Take a look..</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-navigation">
-                <button id="prev" class="swiper-button">
-                    <img src="/images/back.png" alt="Previous" class="swiper-icon">
-                </button>
-                <div class="swiper-pagination"></div>
-                <button id="next" class="swiper-button">
-                    <img src="/images/next.png" alt="Next" class="swiper-icon">
-                </button>
-            </div>
         </div>
-    </section>    
+    </section>
     <footer id="footer" class="footer">
         <ul class="socials">
             <li><a href="mailto:komasinski.bartosz@gmail.com"><ion-icon name="mail">Email</ion-icon></a></li>

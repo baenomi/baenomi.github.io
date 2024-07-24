@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 400;
     font-style: normal;
     background: white;
@@ -70,7 +70,7 @@ nav.top .menu li {
 nav.top .menu li a {
     text-decoration: none;
     color: #8d21ff;
-    font-size: 18px;
+    font-size: 1.1rem;
     position: relative;
     padding-bottom: 5px;
     transition: color 0.3s ease;
@@ -144,7 +144,7 @@ nav.top .logo {
 }
 
 nav.top .logo img {
-    height: 40px;
+    height: 30px;
     margin-right: 10px;
 }
 
@@ -272,6 +272,9 @@ a.logoLink:hover {
     height: 300px;
     width: 300px;
     flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sneaker-grid::-webkit-scrollbar {
@@ -301,7 +304,6 @@ a.logoLink:hover {
 }
 
 .sneaker-card:hover {
-    transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -338,14 +340,18 @@ a.logoLink:hover {
     align-items: center;
     background-color: #ffffff;
     color: #fff;
-    border: none;
-    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 100px;
     padding: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
 }
+.see-more:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 .see-more h3 {
     margin: 0;
