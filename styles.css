@@ -897,7 +897,7 @@ footer .socials li a:hover {
   }
 
   body {
-      padding-top: 7rem;
+      padding-top: 10rem;
   }
 
   .about h2 {
@@ -1024,6 +1024,11 @@ footer .socials li a:hover {
     height: auto;
     margin-right: 5px;
 }
+
+.swiper-slide .description{
+  margin-right: 0.5rem;
+}
+
 }
 
   .swiper-container {
