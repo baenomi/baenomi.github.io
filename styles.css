@@ -695,7 +695,7 @@ footer .socials {
 }
 
 .image {
-  background-image: url('src/images/profileImg.png');
+  background-image: url('images/profileImg.png');
   background-size: cover;
   background-position: center center;
   height: 20rem;
