@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="styles.css">
@@ -21,7 +15,7 @@
         <ul class="menu">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#footer">Socials</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div id="toggle-button" class="toggle-mode">
@@ -64,11 +58,26 @@
                             <img src="images/language_dark2.png" alt="Languages" />
                         </div>
                         <div class="icon2">
-                            <i class="devicon-javascript-plain"></i>
-                            <i class="devicon-css3-plain"></i>
-                            <i class="devicon-html5-plain"></i>
-                            <i class="devicon-react-original"></i>
-                            <i class="devicon-python-plain"></i>
+                            <div class="icon-container">
+                                <i class="devicon-javascript-plain"></i>
+                                <div class="tooltip">Basic</div>
+                            </div>
+                            <div class="icon-container">
+                                <i class="devicon-css3-plain"></i>
+                                <div class="tooltip">Intermediate</div>
+                            </div>
+                            <div class="icon-container">
+                                <i class="devicon-html5-plain"></i>
+                                <div class="tooltip">Intermediate</div>
+                            </div>
+                            <div class="icon-container">
+                                <i class="devicon-react-original"></i>
+                                <div class="tooltip">Basic</div>
+                            </div>
+                            <div class="icon-container">
+                                <i class="devicon-python-plain"></i>
+                                <div class="tooltip">Basic</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,13 +122,37 @@
                             <a href="#" class="read-more">Take a look..</a>
                         </div>
                     </div>
+                    <div class="project-card">
+                        <img src="images/project3.webp" alt="Project 3" class="project-image">
+                        <div class="project-info">
+                            <h2>Project 4</h2>
+                            <p>In progress...</p>
+                            <a href="#" class="read-more">Take a look..</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <section id="contact" class="hidden">
+        <div class="contact-container">
+            <div class="contact-card">
+                <h2>Contact me!</h2>
+                <p>komasinski.bartosz@gmail.com</p>
+                <button class="submit-button">
+                    <a href="mailto:komasinski.bartosz@gmail.com">
+                        Send message
+                        <img src="images/send-icon.svg" alt="Send Icon" class="icon">
+                    </a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <a href="#" class="scroll-to-top">
+        <img src="images/up.png" alt="Go to top" />
+    </a>
     <footer id="footer" class="footer">
         <ul class="socials">
-            <li><a href="mailto:komasinski.bartosz@gmail.com"><ion-icon name="mail">Email</ion-icon></a></li>
             <li><a href="https://www.linkedin.com/in/bartosz-komasinski/"><ion-icon name="logo-linkedin">Linkedin</ion-icon></a></li>
             <li><a href="https://github.com/baenomi"><ion-icon name="logo-github"></ion-icon></ion-icon></a></li>
         </ul>

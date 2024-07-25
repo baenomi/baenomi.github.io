@@ -48,26 +48,6 @@ toggleButton.addEventListener('click', () => {
     }, 170);
 });
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    if (localStorage.getItem('dark-mode') !== 'enabled') {
-        const isDarkMode = event.matches;
-        document.body.classList.toggle('dark-mode', isDarkMode);
-        intro.classList.toggle('dark-mode', isDarkMode);
-        intro2.classList.toggle('dark-mode', isDarkMode);
-        MyName.classList.toggle('dark-mode', isDarkMode);
-        socials.classList.toggle('dark-mode', isDarkMode);
-        additionalInfo.classList.toggle('dark-mode', isDarkMode);
-        menu.classList.toggle('dark-mode', isDarkMode);
-        project.classList.toggle('dark-mode', isDarkMode);
-        toggleIcon.style.opacity = 0;
-
-        setTimeout(() => {
-            setIcon(isDarkMode);
-            updateSidebarIcon(isDarkMode);
-            toggleIcon.style.opacity = 1;
-        }, 170);
-    }
-});
 
 function handleResize() {
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -136,4 +116,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-  
+// Function to show or hide the scroll-to-top button
+function toggleScrollToTopButton() {
+    const scrollToTopButton = document.querySelector('.scroll-to-top');
+    const scrollThreshold = window.innerWidth <= 768 ? 1400 : 800;
+
+    if (window.scrollY > scrollThreshold) {
+        scrollToTopButton.classList.add('show');
+    } else {
+        scrollToTopButton.classList.remove('show');
+    }
+}
+
+// Event listener for scrolling
+window.addEventListener('scroll', toggleScrollToTopButton);
+
+// Event listener for click on the scroll-to-top button
+document.querySelector('.scroll-to-top').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

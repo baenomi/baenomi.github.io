@@ -14,7 +14,7 @@ body {
     font-family: "Nunito", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background: white;
+    background: rgb(231, 231, 231);
     margin: 0;
     padding-top: 100px;
     overflow-x: hidden;
@@ -38,8 +38,7 @@ nav.top {
     display: flex;
     align-items: center;
     padding: 5px 20px;
-    background-color: #ffffff7b;
-    color: #E0E0E0;
+    background-color: rgb(231, 231, 231);
     position: fixed;
     top: 0;
     width: 100%;
@@ -70,7 +69,7 @@ nav.top .menu li {
 nav.top .menu li a {
     text-decoration: none;
     color: #8d21ff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     position: relative;
     padding-bottom: 5px;
     transition: color 0.3s ease;
@@ -133,13 +132,12 @@ nav.top .menu li a:hover {
 nav.top .logo {
     display: flex;
     align-items: center;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
+    opacity: 1;
     background-color: #8d21ff;
     padding: 10px 20px;
     border-radius: 70px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 10px 0;
+    margin: 0.2rem 0;
     margin-left: 20px;
 }
 
@@ -149,10 +147,10 @@ nav.top .logo img {
 }
 
 nav.top .logo span {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
     font-style: normal;
-    font-size: 18px;
+    font-size: 16px;
     color: #000000;
     transition: color 0.3s ease;
 }
@@ -163,17 +161,6 @@ a.logoLink {
 
 a.logoLink:hover {
     text-decoration: none;
-}
-
-/* Animation */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 /* Image Slider */
@@ -440,6 +427,76 @@ a.logoLink:hover {
     transform: translateY(-10px);
 }
 
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgb(141, 33, 255), rgb(29, 0, 61));
+    height: 80vh; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+/* Animacja wjeżdżania obrazka */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        right: -50%; /* Początkowa pozycja poza ekranem */
+        transform: rotate(0deg); /* Początkowa rotacja */
+    }
+    to {
+        opacity: 1;
+        right: 33%; /* Końcowa pozycja na ekranie */
+        transform: rotate(-15deg); /* Końcowa rotacja */
+    }
+}
+
+/* Animacja wjeżdżania treści hero */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        left: 0%;
+        transform: translate(-150%, -50%); /* Początkowa pozycja poza ekranem */
+    }
+    to {
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Końcowa pozycja na środku */
+    }
+}
+
+
+/* Ustawienia dla obrazka hero */
+.hero-image {
+    position: absolute;
+    margin-top: 6rem;
+    right: -100%; /* Początkowa pozycja poza ekranem */
+    width: auto;
+    height: 50%; /* Adjust the height as needed */
+    animation: slideInRight 2s ease forwards; /* Ustawienie animacji */
+    transform-origin: bottom left; /* Punkt obrotu w lewym dolnym rogu */
+    z-index: 1; /* Ustawienie z-index, aby był nad gradientem */
+}
+
+/* Ustawienia dla treści hero */
+.hero-content {
+    margin-top: 12rem;
+    position: absolute;
+    left: 50%; /* Początkowa pozycja poza ekranem, ale teraz na środku poziomo */
+    top: 50%; /* Początkowa pozycja na środku pionowo */
+    transform: translate(-50%, -50%); /* Wyrównanie do środka */
+    width: auto;
+    height: auto; /* Możesz dostosować wysokość, jeśli jest to potrzebne */
+    z-index: 1; /* Ustawienie z-index, aby był nad obrazkiem */
+    opacity: 0; /* Początkowa przezroczystość */
+    animation: slideInLeft 2s ease forwards; /* Poprawiona nazwa animacji */
+    color: rgb(231, 231, 231);
+}
+
+
 /* RWD */
 
 /* 950px */
@@ -513,6 +570,16 @@ a.logoLink:hover {
 
     .prev, .next {
         display: none;
+    }
+
+    /* Animacja wjeżdżania obrazka */
+    @keyframes slideInRight {
+        from {
+            right: -100%; /* Początkowa pozycja poza ekranem */
+        }
+        to {
+            right: -20%; /* Końcowa pozycja na ekranie */
+        }
     }
 }
 

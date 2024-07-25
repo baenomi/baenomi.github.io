@@ -66,7 +66,7 @@ setInterval(() => {
 
 function scrollSneakerSlider(direction) {
     const slider = document.querySelector('.sneaker-grid');
-    const scrollAmount = 300;
+    const scrollAmount = 500;
 
     slider.scrollBy({
         left: direction * scrollAmount,
