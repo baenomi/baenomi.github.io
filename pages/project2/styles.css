@@ -431,7 +431,7 @@ a.logoLink:hover {
 .hero-section {
     position: relative;
     background: radial-gradient(circle at 50% 50%, rgb(141, 33, 255), rgb(29, 0, 61));
-    height: 80vh; /* Adjust the height as needed */
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -444,13 +444,13 @@ a.logoLink:hover {
 @keyframes slideInRight {
     from {
         opacity: 0;
-        right: -50%; /* Początkowa pozycja poza ekranem */
-        transform: rotate(0deg); /* Początkowa rotacja */
+        right: -50%;
+        transform: rotate(0deg);
     }
     to {
         opacity: 1;
-        right: 33%; /* Końcowa pozycja na ekranie */
-        transform: rotate(-15deg); /* Końcowa rotacja */
+        right: 33%;
+        transform: rotate(-15deg);
     }
 }
 
@@ -459,12 +459,12 @@ a.logoLink:hover {
     from {
         opacity: 0;
         left: 0%;
-        transform: translate(-150%, -50%); /* Początkowa pozycja poza ekranem */
+        transform: translate(-150%, -50%);
     }
     to {
         opacity: 1;
         left: 50%;
-        transform: translate(-50%, -50%); /* Końcowa pozycja na środku */
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -473,26 +473,26 @@ a.logoLink:hover {
 .hero-image {
     position: absolute;
     margin-top: 6rem;
-    right: -100%; /* Początkowa pozycja poza ekranem */
+    right: -100%;
     width: auto;
-    height: 50%; /* Adjust the height as needed */
-    animation: slideInRight 2s ease forwards; /* Ustawienie animacji */
-    transform-origin: bottom left; /* Punkt obrotu w lewym dolnym rogu */
-    z-index: 1; /* Ustawienie z-index, aby był nad gradientem */
+    height: 50%;
+    animation: slideInRight 2s ease forwards;
+    transform-origin: bottom left;
+    z-index: 1;
 }
 
 /* Ustawienia dla treści hero */
 .hero-content {
     margin-top: 12rem;
     position: absolute;
-    left: 50%; /* Początkowa pozycja poza ekranem, ale teraz na środku poziomo */
-    top: 50%; /* Początkowa pozycja na środku pionowo */
-    transform: translate(-50%, -50%); /* Wyrównanie do środka */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: auto;
-    height: auto; /* Możesz dostosować wysokość, jeśli jest to potrzebne */
-    z-index: 1; /* Ustawienie z-index, aby był nad obrazkiem */
-    opacity: 0; /* Początkowa przezroczystość */
-    animation: slideInLeft 2s ease forwards; /* Poprawiona nazwa animacji */
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    animation: slideInLeft 2s ease forwards;
     color: rgb(231, 231, 231);
 }
 
@@ -575,10 +575,10 @@ a.logoLink:hover {
     /* Animacja wjeżdżania obrazka */
     @keyframes slideInRight {
         from {
-            right: -100%; /* Początkowa pozycja poza ekranem */
+            right: -100%;
         }
         to {
-            right: -20%; /* Końcowa pozycja na ekranie */
+            right: -20%;
         }
     }
 }

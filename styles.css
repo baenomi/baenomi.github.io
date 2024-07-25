@@ -876,6 +876,6 @@ footer .socials {
 
 .icon-container:hover .tooltip {
   display: block;
-  bottom: -50px; /* Adjust this value to control how far the tooltip appears below the icon */
+  bottom: -50px;
   opacity: 1;
 }
