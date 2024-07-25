@@ -15,11 +15,6 @@ function setIcon(isDarkMode) {
         ? (isMobile ? 'images/moon.png' : 'images/moon.png')
         : (isMobile ? 'images/sun-mobile.png' : 'images/sun-mobile.png');
     
-    const languagesIcon = document.querySelector('.languages .icon1 img');
-    languagesIcon.src = isDarkMode ? 'images/language.png' : 'images/language_dark.png';
-    
-    const educationIcon = document.querySelector('.education .icon1 img');
-    educationIcon.src = isDarkMode ? 'images/education.png' : 'images/education_dark.png';
 }
 
 if (localStorage.getItem('dark-mode') === 'enabled') {
@@ -115,9 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('show');
   
       if (menu.classList.contains('show')) {
-        menuIcon.src = 'images/close-dark.png';
+        menuIcon.src = 'images/close-dark2.png';
       } else {
-        menuIcon.src = 'images/menu-icon-dark.png';
+        menuIcon.src = 'images/menu-icon-dark2.png';
       }
     });
   });
