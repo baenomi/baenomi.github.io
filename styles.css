@@ -269,10 +269,6 @@ nav.top .menu-toggle img {
       flex-direction: row;
       align-items: flex-start;
   }
-
-  .intro .me {
-      margin-left: 2rem;
-  }
   
   .about, .additional-info {
       text-align: left;
@@ -595,8 +591,6 @@ nav.top .toggle-mode {
   }
 
   .content {
-      margin: 0;
-      padding: 10px;
       width: 100%;
   }
 
@@ -656,11 +650,6 @@ nav.top .toggle-mode {
   .intro .main-content {
       flex-direction: column;
       align-items: center;
-  }
-
-  .intro .me {
-      margin: 20px 0;
-      max-width: 80%;
   }
 
   .about {
@@ -933,8 +922,7 @@ footer .socials {
   opacity: 1;
 }
 
-/* Animations */
-
+/* General animation settings */
 .animateUp, .animateLeft, .animateRight, .animateImage {
   transition: 1.2s;
 }
@@ -967,6 +955,7 @@ footer .socials {
   opacity: 1;
 }
 
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .sec-1 .animateImage {
     transform: translateX(50rem);

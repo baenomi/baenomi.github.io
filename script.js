@@ -22,7 +22,7 @@ function setIcon(isDarkMode) {
         : (isMobile ? 'images/sun-mobile.png' : 'images/sun-mobile.png');
 }
 
-if (localStorage.getItem('dark-mode') === 'enabled') {
+if (localStorage.getItem('dark-mode') === 'disabled') {
     document.body.classList.add('dark-mode');
     intro.classList.add('dark-mode');
     intro2.classList.add('dark-mode');
@@ -130,6 +130,7 @@ document.querySelector('.scroll-to-top').addEventListener('click', function(even
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const animationClass = 'show-animate';
 
     const animateSections = () => {
         sections.forEach(section => {
@@ -138,15 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const height = section.offsetHeight;
 
             if (top >= offset && top < offset + height) {
-                section.classList.add('show-animate');
+                section.classList.add(animationClass);
+            } else if (!isMobile) {
+                section.classList.remove(animationClass);
             }
         });
     };
 
     animateSections();
 
-    window.onscroll = animateSections;
+    window.onscroll = () => {
+        if (!isMobile) {
+            animateSections();
+        }
+    };
 });
+
 
 
 
