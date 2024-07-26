@@ -22,7 +22,7 @@ function setIcon(isDarkMode) {
         : (isMobile ? 'images/sun-mobile.png' : 'images/sun-mobile.png');
 }
 
-if (localStorage.getItem('dark-mode') === 'disabled') {
+if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark-mode');
     intro.classList.add('dark-mode');
     intro2.classList.add('dark-mode');
