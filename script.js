@@ -139,8 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (top >= offset && top < offset + height) {
                 section.classList.add('show-animate');
-            } else {
-                section.classList.remove('show-animate');
             }
         });
     };
