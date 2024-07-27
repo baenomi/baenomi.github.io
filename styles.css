@@ -316,6 +316,7 @@ nav.top .menu-toggle img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 24rem;
+  height: 13.5rem;
   transition: transform 0.3s ease;
   margin-top: 1rem;
   border: 1px solid #ccc;
@@ -360,7 +361,6 @@ nav.top .menu-toggle img {
   transition: opacity 0.5s, transform 0.5s;
 }
 
-/* Show project info on hover */
 .project-card:hover .project-image {
   filter: blur(5px);
   transform: scale(1.1);

@@ -22,21 +22,10 @@ function setIcon(isDarkMode) {
         : (isMobile ? 'images/sun-mobile.png' : 'images/sun-mobile.png');
 }
 
-if (localStorage.getItem('dark-mode') === 'disabled') {
-    document.body.classList.add('dark-mode');
-    intro.classList.add('dark-mode');
-    intro2.classList.add('dark-mode');
-    socials.classList.add('dark-mode');
-    additionalInfo.classList.add('dark-mode');
-    menu.classList.add('dark-mode');
-    contact.classList.add('dark-mode');
-    contactTitle.classList.add('dark-mode');
-    footer.classList.add('dark-mode');
-    navbar.classList.add('dark-mode');
-    projectCards.forEach(card => card.classList.add('dark-mode'));
-    setIcon(true);
-} else {
+if (localStorage.getItem('dark-mode') === 'enabled') {
     setIcon(false);
+} else {
+    setIcon(true);
 }
 
 toggleButton.addEventListener('click', () => {
@@ -60,8 +49,6 @@ toggleButton.addEventListener('click', () => {
         localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
     }, 170);
 });
-
-
 
 function handleResize() {
     const isDarkMode = document.body.classList.contains('dark-mode');
