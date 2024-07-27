@@ -715,6 +715,11 @@ nav.top .toggle-mode {
     margin-left: 0;
   }
 
+  .project-card {
+    height: 8.5rem;
+  }
+
+
 }
 
 .image {
@@ -759,6 +764,10 @@ nav.top .toggle-mode {
   .wrapper .image {
     height: 250px;
     width: 250px;
+  }
+
+  .project-card {
+    height: 11.2rem;
   }
 
 }
