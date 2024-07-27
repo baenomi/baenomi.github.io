@@ -131,29 +131,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const animationClass = 'show-animate';
+    const animatedElements = new Set();
 
     const animateSections = () => {
         sections.forEach(section => {
             const top = window.scrollY;
-            const offset = section.offsetTop - (isMobile ? 200 : 150);
+            const offset = section.offsetTop - (isMobile ? 300 : 300);
             const height = section.offsetHeight;
 
             if (top >= offset && top < offset + height) {
                 section.classList.add(animationClass);
+
+                const elementsToAnimate = section.querySelectorAll('.animateUp, .animateLeft, .animateRight, .animateDown, .animateImage');
+                elementsToAnimate.forEach(element => {
+                    if (!animatedElements.has(element)) {
+                        element.classList.add(animationClass);
+                        animatedElements.add(element);
+                    }
+                });
             } else if (!isMobile) {
                 section.classList.remove(animationClass);
+
+                const elementsToAnimate = section.querySelectorAll('.animateUp, .animateLeft, .animateRight, .animateDown, .animateImage');
+                elementsToAnimate.forEach(element => {
+                    element.classList.remove(animationClass);
+                    animatedElements.delete(element);
+                });
             }
         });
     };
 
+    
     animateSections();
 
     window.onscroll = () => {
-        if (!isMobile) {
-            animateSections();
-        }
+        animateSections();
     };
 });
+
 
 
 

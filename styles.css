@@ -159,17 +159,6 @@ nav.top .menu-toggle img {
   margin-right: auto;
 }
 
-.intro .me {
-  margin-top: auto;
-  max-width: 40%;
-  border-radius: 3rem;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.178);
-  margin-left: auto;
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
-}
-
 .about {
   display: flex;
   flex-direction: column;
@@ -185,7 +174,7 @@ nav.top .menu-toggle img {
 }
 
 .about h2 {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #94C973;
   letter-spacing: 2px;
   text-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.298);
@@ -194,13 +183,13 @@ nav.top .menu-toggle img {
 .about p {
   font-size: 18px;
   margin: 20px 0;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
   text-align: justify;
   line-height: 1.5;
 }
 
 .additional-info {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -273,7 +262,6 @@ nav.top .menu-toggle img {
   .about, .additional-info {
       text-align: left;
   }
-  
 }
 
 /* Projects */
@@ -327,10 +315,11 @@ nav.top .menu-toggle img {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 20rem;
+  width: 24rem;
   transition: transform 0.3s ease;
   margin-top: 1rem;
   border: 1px solid #ccc;
+  position: relative;
 }
 
 .project-card:hover {
@@ -344,32 +333,61 @@ nav.top .menu-toggle img {
 
 .project-image {
   width: 100%;
-  height: 200px;
-  object-fit: center;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  border-radius: 15px;
+  transition: filter 0.5s, transform 0.5s;
+  padding: 0;
+  border-radius: 8px;
 }
 
 .project-info {
   padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Show project info on hover */
+.project-card:hover .project-image {
+  filter: blur(5px);
+  transform: scale(1.1);
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-info h2 {
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0 0 10px;
 }
 
 .project-info p {
-  font-size: 0.8em;
-  color: #2e2e2e;
+  font-size: 0.9em;
+  color: #e0e0e0;
   margin: 0 0 15px;
 }
 
 .read-more {
   text-decoration: none;
-  color: #6ba4ff;
+  color: #94C973;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .read-more:hover {
@@ -423,7 +441,6 @@ footer .socials li a:hover {
   transform: translateY(-10px);
 }
 
-/* Contact Container Styles */
 .contact-container {
   margin-top: 10rem;
   display: flex;
@@ -433,7 +450,6 @@ footer .socials li a:hover {
   flex-direction: column;
 }
 
-/* Contact Card Styles */
 .contact-card {
   background: #fff;
   padding: 20px;
@@ -478,7 +494,6 @@ footer .socials li a:hover {
   color: #E0E0E0 ;
 }
 
-/* Submit Button Styles */
 .submit-button {
   display: inline-flex;
   align-items: center;
@@ -511,7 +526,6 @@ footer .socials li a:hover {
   background: #94C973;
 }
 
-/* Adjustments for a more button-like appearance */
 .submit-button {
   border: none;
   outline: none;
@@ -659,7 +673,7 @@ nav.top .toggle-mode {
 
   .about h1 {
       font-size: 25px;
-      margin-top: 10vh;
+      margin-top: 2vh;
   }
 
   .about p {
@@ -703,6 +717,18 @@ nav.top .toggle-mode {
 
 }
 
+.image {
+  background-image: url('images/profileImg.png');
+  background-size: cover;
+  background-position: center center;
+  height: 20rem;
+  width: 20rem;
+  box-shadow: 0 20px 5px rgba(0, 0, 0, 0.2);
+  animation: animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  margin-left: 5rem;
+}
+
 @media screen and (max-width: 370px) {
     .wrapper .image {
       height: 250px;
@@ -712,21 +738,28 @@ nav.top .toggle-mode {
 }
 
 @media screen and (max-width: 600px) {
-  .intro2 .main-content .about h1 {
-    margin-top: 25rem;
-  }
 
   .project-card {
     width: 70%;
   }
 
   .intro .main-content .about h2 {
-    margin-top: 30rem;
+    margin-top: 30vh;
+    font-size: 3rem;
   }
 
   .project-card {
     width: 20rem;
 }
+
+  .intro2 {
+    margin-top: 10rem;
+  }
+
+  .wrapper .image {
+    height: 250px;
+    width: 250px;
+  }
 
 }
 
@@ -817,18 +850,6 @@ footer .socials {
   width: 20px;
   height: auto;
   margin-right: 5px;
-}
-
-.image {
-  background-image: url('images/profileImg.png');
-  background-size: cover;
-  background-position: center center;
-  height: 20rem;
-  width: 20rem;
-  box-shadow: 0 20px 5px rgba(0, 0, 0, 0.2);
-  animation: animate 5s ease-in-out infinite;
-  transition: all 1s ease-in-out;
-  margin-left: 5rem;
 }
 
 @keyframes animate {
@@ -923,8 +944,8 @@ footer .socials {
 }
 
 /* General animation settings */
-.animateUp, .animateLeft, .animateRight, .animateImage {
-  transition: 1.2s;
+.animateUp, .animateLeft, .animateRight, .animateImage, .animateDown {
+  transition: 1s;
 }
 
 .sec-1 .animateUp {
@@ -955,7 +976,6 @@ footer .socials {
   opacity: 1;
 }
 
-/* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .sec-1 .animateImage {
     transform: translateX(50rem);
@@ -966,4 +986,39 @@ footer .socials {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.sec-2 .animateLeft {
+  transform: translateX(-50rem);
+  opacity: 0;
+}
+
+.sec-2 .animateRight {
+  transform: translateX(50rem);
+  opacity: 0;
+}
+
+.sec-2.show-animate .animateLeft,
+.sec-2.show-animate .animateRight {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .sec-2 .animateLeft,
+  .sec-2 .animateRight {
+    transform: translateX(0);
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.projects-container .project-card:nth-child(1),
+.projects-container .project-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.projects-container .project-card:nth-child(3),
+.projects-container .project-card:nth-child(4) {
+  transition-delay: 0.3s;
 }
