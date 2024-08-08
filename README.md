@@ -1,3 +1,3 @@
 # baenomi.github.io
 
-Portfolio.
+My portfolio projects.
